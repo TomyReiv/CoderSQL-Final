@@ -265,7 +265,11 @@ INSERT INTO vehiculos VALUES
 (null, 14560, 'VPT123', 'Rabbione'),
 (null, 15678, 'AA234CC', 'Juan Perez'),
 (null, 678, 'ASD456', 'Julian Massilla'),
-(null, 13360, 'VPT153', 'Romagnoli');
+(null, 13360, 'VPT153', 'Romagnoli'),
+(null, 1450, 'VPT177', 'Rabbione'),
+(null, 15278, 'AA114CC', 'Juan Perez'),
+(null, 44, 'ASD226', 'Julian Massilla'),
+(null, 213, 'VPT1113', 'Romagnoli');
 
 INSERT INTO rubros_vehiculos VALUES 
 (null, 'No perecederos, bebidas'),
@@ -277,10 +281,30 @@ INSERT INTO segundo_control VALUES
 (null, '32567B', null, null, 1);
 
 INSERT INTO habilitacion_vehiculos VALUES 
-(null, 1, 3, 1, 1, current_date, null),
-(null, 2, 2, null, 1, current_date, null),
-(null, 3, 2, null, 1, current_date, null),
-(null, 4, 1, null, 1, current_date, null);
+(null, 1, 3, 1, 1, '2023-08-05', null),
+(null, 2, 2, null, 1, '2023-01-05', null),
+(null, 3, 2, null, 1, '2023-01-05', null),
+(null, 4, 1, null, 1, '2023-02-05', null),
+(null, 1, 3, 1, 1, '2023-08-05', null),
+(null, 2, 2, null, 1, '2023-04-05', null),
+(null, 3, 2, null, 1, '2023-04-05', null),
+(null, 4, 1, null, 1, '2023-06-05', null),
+(null, 1, 3, 1, 1, '2023-06-05', null),
+(null, 2, 2, null, 1, '2023-07-05', null),
+(null, 3, 2, null, 1, '2023-07-05', null),
+(null, 4, 1, null, 1, '2023-07-05', null),
+(null, 1, 3, 1, 1, '2023-08-05', null),
+(null, 2, 2, null, 1, '2023-11-05', null),
+(null, 3, 2, null, 1, '2023-11-05', null),
+(null, 4, 1, null, 1, '2023-02-05', null),
+(null, 1, 3, 1, 1, '2023-08-05', null),
+(null, 2, 2, null, 1, '2023-12-05', null),
+(null, 3, 2, null, 1, '2023-12-05', null),
+(null, 4, 1, null, 1, '2023-06-05', null),
+(null, 1, 3, 1, 1, '2023-06-05', null),
+(null, 2, 2, null, 1, '2023-10-05', null),
+(null, 3, 2, null, 1, '2023-09-05', null),
+(null, 4, 1, null, 1, '2023-09-05', null);
 
 -- grupos de inspectores--
 INSERT INTO grupos VALUES 
@@ -297,15 +321,27 @@ INSERT INTO grupo_inspectores VALUES
 
 INSERT INTO denuncias VALUES 
 (null, null, 'Brown 1234', 'Presencia de ratas', current_date, 55),
-(null, null, 'Falucho 233', 'Presencia de cucarachas', current_date, 56);
+(null, null, 'Falucho 233', 'Presencia de cucarachas', '2023-01-05', 1),
+(null, null, 'Brown 1234', 'Pelo en la comida', current_date, 57),
+(null, null, 'Falucho 2123', 'Presencia de cucarachas', '2023-02-05', 58),
+(null, null, 'Alberti 1234', 'Producto vencido', '2023-02-05', 59),
+(null, null, 'Gascon 233', 'Carne en mal estado', '2023-11-05', 60),
+(null, null, 'Alvear 1234', 'Presencia de ratas', '2023-12-05', 61),
+(null, null, 'Velez 233', 'Presencia de cucarachas', '2023-11-05', 62);
 
 INSERT INTO actas VALUES 
 (null, '3466778B', '623345', null,  '345', null,'Presencia de ratas'),
 (null, '3456783B', null, null, null, null, 'Habilitacion de comercio'),
 (null, '3466007B', null, '997', null, null,'Inspeccion, comiso'),
 (null, '3466997C', null, null, null, null,'Habilitacion de comercio'),
-(null, '3783997B', null, null, null, null,'Habilitacion de comercio'),
-(null, '3452223B', null, null, null, null, 'Habilitacion de comercio');
+(null, '3783997B', null, null, null, null,'Inspeccion'),
+(null, '3452223B', null, null, null, null, 'Inspeccion'),
+(null, '3466008B', '600345', null,  '345', null,'Presencia de ratas'),
+(null, '3456003B', null, null, null, null, 'Habilitacion de comercio'),
+(null, '3460007B', null, '997', null, null,'Inspeccion, comiso'),
+(null, '3460007C', null, null, null, null, 'Inspeccion'),
+(null, '3780007B', null, null, null, null,'Habilitacion de comercio'),
+(null, '3400003B', null, null, null, null, 'Habilitacion de comercio');
 
 INSERT INTO rubros_comercio VALUES
 (null, 'Despensa'),
@@ -335,6 +371,8 @@ INSERT INTO inspecciones VALUES
 (null, null, 3, 1, 2, current_date);
 
 UPDATE denuncias SET id_acta = 1 WHERE id_denuncia = 1;
+UPDATE denuncias SET id_acta = 7 WHERE id_denuncia = 3;
+UPDATE denuncias SET id_acta = 9 WHERE id_denuncia = 6;
 
 
 
@@ -910,7 +948,7 @@ DELIMITER ;
 UPDATE vehiculos SET Numero_habilitacion = 150987 WHERE id_vehiculo = 1;
 UPDATE comercios SET Expediente_habilitacion = '55/S/222' WHERE id_comercio = 1;
 UPDATE alumnos SET Nombre = 'Juan' WHERE id_alumno = 1;
-UPDATE denuncias SET Numero_orden = 58 WHERE id_denuncia = 2;
+UPDATE denuncias SET Numero_orden = 12 WHERE id_denuncia = 2;
 
 -- INSERTS --
 
